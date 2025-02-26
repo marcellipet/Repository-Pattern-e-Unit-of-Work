@@ -1,16 +1,20 @@
 using System;
+using UnitOfShop.Data;
 using UnitOfShop.Models;
 
 
 namespace UnitOfShop.Repositories {
+
     public interface ICustomerRepository {
         void Save (Customer customer);
     }
 
     public class CustomerRepository : ICustomerRepository
     {
-        public void Save() {
-            throw new System.NotImplementedException();
+        private readonly DataContext _context;
+        public CustomerRepository(DataContext context)
+        {
+            _context = context;
         }
 
         public void Save(Customer customer)
