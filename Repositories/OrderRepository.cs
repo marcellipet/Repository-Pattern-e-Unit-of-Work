@@ -1,4 +1,5 @@
 using System;
+using UnitOfShop.Data;
 using UnitOfShop.Models;
 
 
@@ -9,13 +10,16 @@ namespace UnitOfShop.Repositories {
 
     public class OrderRepository : IOrderRepository
     {
-        public void Save() {
-            throw new System.NotImplementedException();
+        private readonly DataContext _context;
+        public OrderRepository(DataContext context)
+        {
+            _context = context;
         }
 
         public void Save(Order customer)
         {
-        
+            _context.Orders.Add(customer);
+            _context.SaveChanges();
         }
     }
 }
