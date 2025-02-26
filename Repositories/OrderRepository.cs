@@ -3,17 +3,17 @@ using UnitOfShop.Models;
 
 
 namespace UnitOfShop.Repositories {
-    public interface ICustomerRepository {
-        void Save (Customer customer);
+    public interface IOrderRepository {
+        void Save (Order customer);
     }
 
-    public class CustomerRepository : ICustomerRepository
+    public class OrderRepository : IOrderRepository
     {
         public void Save() {
             throw new System.NotImplementedException();
         }
 
-        public void Save(Customer customer)
+        public void Save(Order customer)
         {
         
         }
