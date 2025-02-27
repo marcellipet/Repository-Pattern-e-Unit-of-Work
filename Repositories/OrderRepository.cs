@@ -16,10 +16,9 @@ namespace UnitOfShop.Repositories {
             _context = context;
         }
 
-        public void Save(Order customer)
+        public void Save(Order order)
         {
-            _context.Orders.Add(customer);
-            _context.SaveChanges();
+            _context.Orders.Add(order);
         }
     }
 }
